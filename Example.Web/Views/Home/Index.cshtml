@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Clip-Two - Responsive Admin Template</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    @Styles.Render("~/js/base/style")
+    @Scripts.Render("~/js/base/library")
+    
+</head>
+<body>
+    <div id="app" ng-app='App'>
+        @Html.Partial("Sidebar")
+        <div class="app-content">
+            @Html.Partial("TopNavbar")
+            <div class="main-content">
+                <div class="wrap-content container" id="container" ng-view></div>
+            </div>
+        </div>
+      @Html.Partial("Footer")
+    </div>
+    <!-- start: MAIN JAVASCRIPTS -->
+    @*<script src="/App/vendor/jquery/jquery.min.js"></script>*@
+    @*<script src="vendor/modernizr/modernizr.js"></script>
+    <script src="vendor/jquery-cookie/jquery.cookie.js"></script> 
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="vendor/switchery/switchery.min.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+    <script src="vendor/Chart.js/Chart.min.js"></script>
+    <script src="vendor/jquery.sparkline/jquery.sparkline.min.js"></script>
+    <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- start: CLIP-TWO JAVASCRIPTS -->
+    <script src="assets/js/main.js"></script>
+    <!-- start: JavaScript Event Handlers for this page -->
+    <script src="assets/js/index.js"></script>
+    <script>
+			jQuery(document).ready(function() {
+				Main.init();
+				Index.init();
+			});
+    </script>*@
+    <!-- end: JavaScript Event Handlers for this page -->
+<!-- end: CLIP-TWO JAVASCRIPTS -->
+    @Scripts.Render("~/js/angularjs/app")
+</body>
+</html>

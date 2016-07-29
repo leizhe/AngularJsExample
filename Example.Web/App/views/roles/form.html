@@ -1,0 +1,26 @@
+﻿<section id="page-title" class="padding-top-15 padding-bottom-15">
+    <div class="row">
+        <div class="col-sm-7">
+            <h1 class="mainTitle">Roles</h1>
+            <span class="mainDescription">{{title}} </span>
+        </div>
+        <div class="col-sm-5"></div>
+    </div>
+</section>
+<div class="container-fluid container-fullw bg-white">
+    <div class="row">
+        <form class="form-horizontal col-padding-top">
+            <div class="form-group form-group-sm">
+                <label class="col-sm-1 control-label">RoleName:</label>
+                <div class="col-sm-3">
+                    <input type="text" ng-model="model.RoleName" class="form-control">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-1 control-label"><a ng-href="#/roles/list">Back</a></label>
+                
+                <div class="col-sm-3">    <button ng-click="save()" class="btn btn-success">Save</button></div>
+            </div>
+        </form>
+    </div>
+</div>

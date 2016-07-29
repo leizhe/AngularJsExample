@@ -1,0 +1,63 @@
+﻿<section id="page-title" class="padding-top-15 padding-bottom-15">
+    <div class="row">
+        <div class="col-sm-7">
+            <h1 class="mainTitle">Users</h1>
+            <span class="mainDescription">Create &amp; Update &amp; Delete </span>
+        </div>
+        <div class="col-sm-5"></div>
+    </div>
+</section>
+<div class="container-fluid container-fullw bg-white">
+    <div class="row">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th class="col-sm-1">Name</th>
+                    <th class="col-sm-2">Roles</th>
+                    <th class="col-sm-1">RealName</th>
+                    <th class="col-sm-2">Email</th>
+                    <th class="col-sm-2">CreateTime</th>
+                    <th class="col-sm-1">State</th>
+                    <th class="col-sm-2"><a href="#/users/form/" class="btn btn-primary btn-xs">Add User</a></th>
+                </tr>
+            </thead>
+            <tbody ng-if="!loadingState">
+                <tr ng-repeat="item in list">
+                    <td>{{item.Name}}</td>
+                    <td>
+                        <a href="javascript:;" ng-click="assignRoles(item)">
+                            {{item.Roles|merge:'RoleName':2:'...'|none:'No role'}}
+                            <span class="text-success">({{item.Roles.length}})</span>
+                        </a>
+                    </td>
+                    <td>{{item.RealName}}</td>
+                    <td>{{item.Email}}</td>
+                    <td>{{item.CreateTime|date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td>{{item.State|state}}</td>
+                    <td>
+                        <button type="button" ng-click="assignRoles(item)" class="btn btn-default btn-xs">Assign Roles</button>
+                        <button type="button" ng-click="remove(item)" class="btn btn-danger btn-xs">Delete</button>
+                        <a ng-href="#/users/form/{{item.Id}}" class="btn btn-success btn-xs">Edit</a>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody ng-if="loadingState">
+                <tr>
+                    <td colspan="8" class="text-center">
+                        <img width="60" src="/App/assets/images/loading.gif" />
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot ng-show="!loadingState">
+                <tr>
+                    <td colspan="7">
+                        <div class="pull-right">
+                            <div class="pagination-info"><span class="ng-binding">Total:{{total}}</span>， <span class="ng-binding">Page Size：{{size}}</span></div>
+                            <pagination boundary-links="true" total-items="total" ng-model="current" max-size="10" ng-change="search(true)" items-per-page="size" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

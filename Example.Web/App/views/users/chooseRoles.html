@@ -1,0 +1,34 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Assign Roles</h3>
+</div>
+<div class="modal-body" >
+    <table class="table table-hover table-bordered" style="background-color:white;">
+        <thead>
+            <tr>
+                <th class="col-sm-1">#</th>
+                <th class="col-sm-2">Role</th>
+                <th class="col-sm-1">Operate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="pointer" ng-click="checked(item)" ng-repeat="item in roles">
+                <td><input type="checkbox" ng-checked="item.isChecked" /></td>
+                <td>{{item.RoleName}}</td>
+                <td><button class="btn btn-danger btn-xs">Select</button></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                    <div class="pull-right">
+                        <pagination boundary-links="true" total-items="total" ng-model="current" max-size="10" ng-change="search(true)" items-per-page="size" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="save()">Save</button>
+    <button class="btn btn-primary btn-o" ng-click="cancel()">Cancel</button>
+</div>

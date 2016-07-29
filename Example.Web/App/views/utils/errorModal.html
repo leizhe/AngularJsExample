@@ -1,0 +1,10 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Service Error</h3>
+</div>
+<div class="modal-body text-danger">
+    {{ExceptionMessage||Message}}
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="report()">report</button>
+    <button class="btn btn-primary btn-o" ng-click="cancel()">cancel</button>
+</div>
